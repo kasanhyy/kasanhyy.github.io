@@ -1,14 +1,12 @@
 # Yiyun He — Personal Academic Website
 
-This is a lightweight, dependency-free academic homepage designed for GitHub Pages. It mirrors the information architecture of the previous Google Sites page while improving typography, navigation, responsive behavior, and maintainability.
+This is a simple, dependency-free academic homepage designed for GitHub Pages. Its content and structure follow the previous Google Sites page.
 
 ## Edit the site
 
 - Main content: `index.html`
 - Visual design: `styles.css`
-- Small interactions: `script.js`
 - Profile photograph: `assets/yiyun-he.jpg`
-- Social sharing image: `assets/og.png`
 
 ## Preview locally
 
