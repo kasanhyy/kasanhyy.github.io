@@ -24,4 +24,4 @@ Then visit `http://localhost:8000`.
 
 The workflow in `.github/workflows/pages.yml` publishes the site whenever the `main` branch changes. In the GitHub repository settings, choose **GitHub Actions** as the Pages source if it is not selected automatically.
 
-For a personal homepage at `https://YOUR-USERNAME.github.io`, name the repository `YOUR-USERNAME.github.io`.
+The live personal homepage is available at <https://kasanhyy.github.io/>.
