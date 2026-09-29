@@ -214,7 +214,7 @@ li::marker {
   border-bottom: 0;
 }
 
-.publication-list a:first-child {
+.publication-title {
   font-family: Georgia, "Times New Roman", serif;
   font-size: 1.06rem;
   font-weight: 600;
