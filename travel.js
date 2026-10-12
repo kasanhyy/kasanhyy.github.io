@@ -1,9 +1,68 @@
 /*
- * Travel data
- * -----------
- * Add new entries at the top of this array. The renderer joins all defined
- * fields with commas, so `organization` may be omitted when it is not needed.
+ * Talks and travel data
+ * ---------------------
+ * Add new entries at the top of the relevant array. The renderers join all
+ * defined fields with commas, so optional fields may be omitted.
  */
+const talkEvents = [
+  {
+    event: "Computational and Applied Mathematics Seminar, NC State University",
+    date: "Sept 2026",
+  },
+  {
+    event: "Fairness and Foundations in Machine Learning Workshop, AIM, California Institute of Technology",
+    date: "Jul 2026",
+  },
+  {
+    event: "Probability Seminar, Fields Institute, University of Toronto",
+    date: "May 2026",
+  },
+  {
+    event: "Probability Seminar, Brown University",
+    date: "Apr 2026",
+  },
+  {
+    event: "ICERM Graduate Seminar, ICERM, Brown University",
+    date: "Feb 2026",
+  },
+  {
+    event: "Probability Seminar, University of California, San Diego",
+    date: "Jan 2025",
+  },
+  {
+    event: "Joint Mathematics Meetings, Seattle, WA",
+    date: "Jan 2025",
+  },
+  {
+    event: "Probability Seminar, University of Southern California",
+    date: "Aug 2024",
+  },
+  {
+    event: "Group Seminar of Prof. Deanna Needell, University of California, Los Angeles",
+    date: "May 2024",
+  },
+  {
+    event: "Southern California Applied Mathematics Symposium",
+    date: "Apr 2024",
+  },
+  {
+    event: "Probability Seminar, University of Washington",
+    date: "Apr 2024",
+  },
+  {
+    event: "Joint Mathematics Meetings, San Francisco, CA",
+    date: "Jan 2024",
+  },
+  {
+    event: "Conference on Learning Theory",
+    date: "Jul 2023",
+  },
+  {
+    event: "Southern California Applied Mathematics Symposium",
+    date: "Apr 2023",
+  },
+];
+
 const travelEvents = [
   {
     date: "Jul 13–17, 2026",
@@ -33,6 +92,11 @@ const travelEvents = [
     date: "Sep 8–12, 2025",
     event: "Random Matrix Theory Summer School",
     location: "Kyoto, Japan",
+  },
+  {
+    date: "Jul 14–25, 2025",
+    event: "International Congress of Basic Science",
+    location: "Beijing, China",
   },
   {
     date: "Apr 20–26, 2025",
@@ -144,24 +208,52 @@ const travelEvents = [
   },
 ];
 
-function renderTravelEvents() {
-  const list = document.querySelector("#travel-list");
+function createDatedItem(details, date) {
+  const item = document.createElement("li");
+  const entry = document.createElement("span");
+  const detailsElement = document.createElement("span");
+  const dateElement = document.createElement("span");
+
+  entry.className = "dated-entry";
+  detailsElement.className = "event-details";
+  dateElement.className = "event-date";
+  detailsElement.textContent = details;
+  dateElement.textContent = date;
+
+  entry.append(detailsElement, dateElement);
+  item.append(entry);
+  return item;
+}
+
+function renderTalkEvents() {
+  const list = document.querySelector("#talk-list");
   const items = document.createDocumentFragment();
 
-  for (const travelEvent of travelEvents) {
-    const item = document.createElement("li");
-    const fields = [
-      travelEvent.date,
-      travelEvent.event,
-      travelEvent.organization,
-      travelEvent.location,
-    ];
-
-    item.textContent = fields.filter(Boolean).join(", ");
-    items.append(item);
+  for (const talkEvent of talkEvents) {
+    items.append(createDatedItem(talkEvent.event, talkEvent.date));
   }
 
   list.replaceChildren(items);
 }
 
+function renderTravelEvents() {
+  const list = document.querySelector("#travel-list");
+  const items = document.createDocumentFragment();
+
+  for (const travelEvent of travelEvents) {
+    const fields = [
+      travelEvent.event,
+      travelEvent.organization,
+      travelEvent.location,
+    ];
+
+    items.append(
+      createDatedItem(fields.filter(Boolean).join(", "), travelEvent.date),
+    );
+  }
+
+  list.replaceChildren(items);
+}
+
+renderTalkEvents();
 renderTravelEvents();

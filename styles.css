@@ -194,6 +194,20 @@ li::marker {
   color: #8aa8b7;
 }
 
+.dated-list .dated-entry {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) max-content;
+  gap: 24px;
+  align-items: baseline;
+}
+
+.event-date {
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+}
+
 .publication-list {
   padding-left: 0;
   list-style: none;
@@ -260,6 +274,10 @@ em {
 
   .about img {
     width: min(100%, 360px);
+  }
+
+  .dated-list .dated-entry {
+    gap: 14px;
   }
 }
 
