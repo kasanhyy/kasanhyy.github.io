@@ -1,101 +1,69 @@
 /*
- * Publication data
- * ----------------
- * Add new entries at the top of this array. Only `title` and `year` are
- * required. Optional fields are demonstrated by the existing entries.
- * For the uncommon case of a second journal or conference, add
- * `venuePrefix2` and `venue2`. Use `year2` only when its publication year
- * differs from `year`.
+ * Publication data, synchronized with CV/CV.tex.
+ * Keep the two arrays in the same order as the CV publication sections.
  */
-const publications = [
+const publishedPapers = [
   {
-    title: "Differentially Private Synthetic Data under Maximum Mean Discrepancy",
-    authors: ["Rundong Ding", "Yizhe Zhu"],
-    status: "To appear",
-    year: 2026,
-  },
-  {
-    title: "Perturbation analysis in matrix approximation",
-    authors: [
-      "Alberto Bucci",
-      "Christopher Musco",
-      "Swati Padmanabhan",
-      "David Persson",
-      "Arvind Saibaba",
-    ],
-    status: "To appear",
-    year: 2026,
-  },
-  {
-    title: "Concentration of bounded sparse chaoses and sparse Khatri-Rao embeddings",
-    url: "https://arxiv.org/abs/2609.28875",
-    authors: ["Guosheng Dai", "Ke Wang", "Yizhe Zhu"],
-    status: "Preprint",
-    year: 2026,
-  },
-  {
-    title: "Intrinsic-Dimensional Wasserstein Guarantees for Private Synthetic Measures",
-    url: "https://arxiv.org/abs/2609.17624",
-    status: "Preprint",
-    year: 2026,
-  },
-  {
-    title: "Minimax optimal differentially private synthetic data for smooth queries",
+    title: "Minimax Optimal Differentially Private Synthetic Data for Smooth Queries",
     url: "https://arxiv.org/abs/2602.01607",
     authors: ["Rundong Ding", "Yizhe Zhu"],
-    venuePrefix: "Extended abstract published in",
-    venue: "Proceedings of the Thirty-Ninth Conference on Learning Theory (COLT)",
-    year: 2026,
-
-    venuePrefix2: "Submitted to",
-    venue2: "IEEE Transactions on Information Theory",
+    citations: [
+      {
+        prefix: "Extended abstract published at",
+        venue: "Conference on Learning Theory (COLT)",
+        details: "PMLR 336:1963–1964",
+        year: 2026,
+      },
+      {
+        prefix: "Full version submitted to",
+        venue: "IEEE Transactions on Information Theory",
+      },
+    ],
   },
   {
     title: "FL-Sailer: Efficient and Privacy-Preserving Federated Learning for Scalable Single-Cell Epigenetic Data Analysis via Adaptive Sampling",
     url: "https://arxiv.org/abs/2605.04519",
     authors: ["Guangyi Zhang", "Yi Dai", "Junhao Liu"],
-    venue: "Transactions on Machine Learning Research",
-    year: 2026,
-  },
-  {
-    title: "A note on the improved sparse Hanson-Wright inequalities",
-    url: "https://arxiv.org/abs/2505.20799",
-    authors: ["Guosheng Dai", "Ke Wang", "Yizhe Zhu"],
-    status: "Preprint",
-    year: 2025,
+    citations: [
+      {
+        prefix: "To appear in",
+        venue: "Transactions on Machine Learning Research (TMLR)",
+      },
+    ],
   },
   {
     title: "Sparse Hanson-Wright Inequalities with Applications",
     url: "https://arxiv.org/abs/2410.15652",
     authors: ["Ke Wang", "Yizhe Zhu"],
-    venue: "Electronic Journal of Probability",
-    year: 2026,
+    citations: [
+      {
+        venue: "Electronic Journal of Probability",
+        details: "31: 1–49",
+        year: 2026,
+      },
+    ],
+  },
+  {
+    title: "Differentially private low-dimensional synthetic data from high-dimensional datasets",
+    url: "https://arxiv.org/abs/2305.17148",
+    authors: ["Thomas Strohmer", "Roman Vershynin", "Yizhe Zhu"],
+    citations: [
+      {
+        venue: "Information and Inference: A Journal of the IMA",
+        details: "14(1): iaae034",
+        year: 2025,
+      },
+    ],
   },
   {
     title: "Online Differentially Private Synthetic Data Generation",
     url: "https://arxiv.org/abs/2402.08012",
     authors: ["Roman Vershynin", "Yizhe Zhu"],
-    venue: "IEEE Transactions on Privacy",
-    year: 2024,
-  },
-  {
-    title: "Differentially Private Low-dimensional Synthetic Data from High-dimensional Datasets",
-    url: "https://arxiv.org/abs/2305.17148",
-    authors: ["Thomas Strohmer", "Roman Vershynin", "Yizhe Zhu"],
-    venue: "Information and Inference",
-    year: 2024,
-  },
-  {
-    title: "Algorithmically Effective Differentially Private Synthetic Data",
-    url: "https://arxiv.org/abs/2302.05552",
-    authors: ["Roman Vershynin", "Yizhe Zhu"],
-    venue: "Proceedings of the Thirty-Sixth Conference on Learning Theory (COLT)",
-    details: "PMLR 195:3941–3968",
-    year: 2023,
-    links: [
+    citations: [
       {
-        label: "conference proceedings",
-        url: "https://proceedings.mlr.press/v195/he23a.html",
+        venue: "IEEE Transactions on Privacy",
+        details: "1: 19–30",
+        year: 2024,
       },
     ],
   },
@@ -103,8 +71,93 @@ const publications = [
     title: "Strong quantum nonlocality and unextendibility without entanglement in N-partite systems with odd N",
     url: "https://arxiv.org/abs/2203.14503",
     authors: ["Fei Shi", "Xiande Zhang"],
-    venue: "Quantum",
-    year: 2023,
+    citations: [
+      {
+        venue: "Quantum",
+        details: "8: 1349",
+        year: 2024,
+      },
+    ],
+  },
+  {
+    title: "Algorithmically Effective Differentially Private Synthetic Data",
+    url: "https://arxiv.org/abs/2302.05552",
+    authors: ["Roman Vershynin", "Yizhe Zhu"],
+    citations: [
+      {
+        venue: "Conference on Learning Theory (COLT)",
+        details: "PMLR 195:3941–3968",
+        year: 2023,
+        links: [
+          {
+            label: "conference proceedings",
+            url: "https://proceedings.mlr.press/v195/he23a.html",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const preprintsAndManuscripts = [
+  {
+    title: "Perturbation bounds for low-rank matrix approximation algorithms",
+    authors: [
+      "Alberto Bucci",
+      "Christopher Musco",
+      "Swati Padmanabhan",
+      "David Persson",
+      "Arvind Saibaba",
+    ],
+    citations: [
+      { text: "In preparation, expected to be posted in November 2026." },
+    ],
+  },
+  {
+    title: "Differentially Private Synthetic Data under Maximum Mean Discrepancy",
+    authors: ["Rundong Ding", "Yizhe Zhu"],
+    citations: [
+      {
+        prefix: "Submitted to",
+        venue: "International Conference on Algorithmic Learning Theory",
+        year: 2027,
+      },
+    ],
+  },
+  {
+    title: "Concentration of bounded sparse chaoses and sparse Khatri-Rao embeddings",
+    url: "https://arxiv.org/abs/2609.28875",
+    authors: ["Guozheng Dai", "Ke Wang", "Yizhe Zhu"],
+    citations: [
+      {
+        prefix: "Submitted to",
+        venue: "International Conference on Algorithmic Learning Theory",
+        year: 2027,
+      },
+    ],
+  },
+  {
+    title: "Intrinsic-Dimensional Wasserstein Guarantees for Private Synthetic Measures",
+    url: "https://arxiv.org/abs/2609.17624",
+    citations: [
+      {
+        prefix: "Submitted to",
+        venue: "Information and Inference: A Journal of the IMA",
+        year: 2026,
+      },
+    ],
+  },
+  {
+    title: "A Note on the Improved Sparse Hanson-Wright Inequalities",
+    url: "https://arxiv.org/abs/2505.20799",
+    authors: ["Guozheng Dai", "Ke Wang", "Yizhe Zhu"],
+    citations: [
+      {
+        prefix: "Submitted to",
+        venue: "Latin American Journal of Probability and Mathematical Statistics",
+        year: 2025,
+      },
+    ],
   },
 ];
 
@@ -139,27 +192,26 @@ function publicationTitle(publication) {
 function publicationCitation(citation) {
   const fragment = document.createDocumentFragment();
 
-  if (citation.status) {
-    fragment.append(`${citation.status}, ${citation.year}.`);
+  if (citation.text) {
+    fragment.append(citation.text);
     return fragment;
   }
 
-  if (citation.venuePrefix) fragment.append(`${citation.venuePrefix} `);
+  if (citation.prefix) fragment.append(`${citation.prefix} `);
 
-  if (citation.venue) {
-    const venue = document.createElement("em");
-    venue.textContent = citation.venue;
-    fragment.append(venue, ", ");
-  }
+  const venue = document.createElement("em");
+  venue.textContent = citation.venue;
+  fragment.append(venue);
 
-  if (citation.details) fragment.append(`${citation.details}, `);
-  fragment.append(`${citation.year}.`);
+  const details = [citation.details, citation.year].filter(Boolean);
+  if (details.length) fragment.append(`, ${details.join(", ")}`);
+  fragment.append(".");
 
   return fragment;
 }
 
-function renderPublications() {
-  const list = document.querySelector("#publication-list");
+function renderPublicationList(selector, publications) {
+  const list = document.querySelector(selector);
   const items = document.createDocumentFragment();
 
   for (const publication of publications) {
@@ -170,19 +222,7 @@ function renderPublications() {
       item.append(` with ${formatNames(publication.authors)}.`);
     }
 
-    const citations = [publication];
-
-    if (publication.venue2) {
-      citations.push({
-        venue: publication.venue2,
-        venuePrefix: publication.venuePrefix2,
-        details: publication.details2,
-        year: publication.year2 ?? publication.year,
-        links: publication.links2,
-      });
-    }
-
-    for (const citation of citations) {
+    for (const citation of publication.citations) {
       item.append(document.createElement("br"));
       item.append(publicationCitation(citation));
 
@@ -197,4 +237,5 @@ function renderPublications() {
   list.replaceChildren(items);
 }
 
-renderPublications();
+renderPublicationList("#published-list", publishedPapers);
+renderPublicationList("#preprint-list", preprintsAndManuscripts);
