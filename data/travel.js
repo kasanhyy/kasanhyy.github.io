@@ -12,6 +12,7 @@ const talkEvents = [
   {
     event: "Fairness and Foundations in Machine Learning Workshop, AIM, California Institute of Technology",
     date: "Jul 2026",
+    videoUrl: "https://vimeo.com/1235203028",
   },
   {
     event: "Probability Seminar, Fields Institute, University of Toronto",
@@ -208,7 +209,7 @@ const travelEvents = [
   },
 ];
 
-function createDatedItem(details, date) {
+function createDatedItem(details, date, videoUrl) {
   const item = document.createElement("li");
   const entry = document.createElement("span");
   const detailsElement = document.createElement("span");
@@ -220,6 +221,19 @@ function createDatedItem(details, date) {
   detailsElement.textContent = details;
   dateElement.textContent = date;
 
+  if (videoUrl) {
+    const videoLink = document.createElement("a");
+    videoLink.href = videoUrl;
+    videoLink.target = "_blank";
+    videoLink.rel = "noreferrer";
+    videoLink.textContent = videoUrl;
+    detailsElement.append(
+      document.createElement("br"),
+      "Video available: ",
+      videoLink,
+    );
+  }
+
   entry.append(detailsElement, dateElement);
   item.append(entry);
   return item;
@@ -230,7 +244,9 @@ function renderTalkEvents() {
   const items = document.createDocumentFragment();
 
   for (const talkEvent of talkEvents) {
-    items.append(createDatedItem(talkEvent.event, talkEvent.date));
+    items.append(
+      createDatedItem(talkEvent.event, talkEvent.date, talkEvent.videoUrl),
+    );
   }
 
   list.replaceChildren(items);

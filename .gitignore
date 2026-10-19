@@ -1,0 +1,20 @@
+# Operating system files
+.DS_Store
+Thumbs.db
+
+# Editors and IDEs
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Build output and caches
+dist/
+build/
+out/
+.cache/
+
+# Logs
+*.log
+
