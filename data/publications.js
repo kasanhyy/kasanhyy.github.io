@@ -114,7 +114,8 @@ const preprintsAndManuscripts = [
     ],
   },
   {
-    title: "Differentially Private Synthetic Data under Maximum Mean Discrepancy",
+    title: "Differentially Private Synthetic Data via Generalized Moment Matching",
+    url: "https://arxiv.org/abs/2610.30196",
     authors: ["Rundong Ding", "Yizhe Zhu"],
     citations: [
       {
